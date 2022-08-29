@@ -1,0 +1,73 @@
+//Crie uma classe e insira nela, no mínimo, dois atributos, 
+//os quais devem ter um método acessor (get) e um método modificador 
+//(set) para cada. Defina um objeto para cada atributo e elabore um construtor para criar alguma regra.
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+    <script>
+
+        class Carro{
+            constructor(marca,modelo,cor){
+                this.modelo=modelo
+                this.marca=marca
+                this.cor=cor 
+                this.ligado=false
+                this.km=0
+                this.comb=10
+                // o this dentro do objeto, está fazendo referência a própria class
+            }//método info
+            info(){
+                console.log("Marca......: " + this.marca)
+                console.log("Modelo.....: " + this.modelo)
+                console.log("cor........: " + this.cor)
+                console.log("ligado.....: " + (this.ligado ? "sim" : "Não"))
+                console.log("KM.........: " + this.km)
+                console.log("combustível: " + this.comb)
+                console.log("--------------------------")
+
+            }
+            ligar(){
+                this.ligado=true
+            }
+            desligar(){
+                this.ligado=false
+            }
+            set setComb(v){//Método set, serve pra definir o valor de um atributo
+                if(v<0 || v>100){
+                    alert("Valor inválido")
+                }else{ 
+                     this.comb=v
+                     console.log("Combustível alterado, Quantidade Atual: " + this.comb)
+                }
+            }
+            get getComb(){
+                return this.comb
+            }          //Método get, serve para obter o valor de um atributo
+        }
+        let c1=new Carro("Honda","HRV","Prata")
+        let c2=new Carro("VW","Golf","Branco")
+        let c3=new Carro("GW","Camaro","Preto")
+        let c4=new Carro("Ford","Mustang","Vermelho") 
+
+        c1.setComb=100
+        c1.ligar() 
+        console.log(c1.getComb)
+
+        c1.info() 
+        c2.info()
+        c3.info()
+        c4.info()
+        //chamando o método info para cada objetos
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
