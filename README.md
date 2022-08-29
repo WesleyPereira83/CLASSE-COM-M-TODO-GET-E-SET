@@ -1,0 +1,2 @@
+# CLASSE COM MÉTODO GET E SET
+ 
